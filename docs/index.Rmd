@@ -1,28 +1,38 @@
 ---
-title: "Untitled"
+title: "Incarceration Report"
+author: "Alexander Evans"
+date: "2/25/2022"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Overview
+Hello, welcome to my report on Incarceration. I will be using data from the _**Vera Institute of Justice**_ to gather a lot of ([data](https://trends.vera.org/)) that I will use in order to asnwer many questions about Incarceration levels from 1970 to 2018, all around the United States. With statistics like these, we can really take a look at how our incarceration levels have been and we can come up with many different inferences based on our statistics. 
+
+## Summary Information 
+```{r, echo = FALSE}
+source("../source/analysis.R")
 ```
 
-## R Markdown
+Before I made any visualizations myself, I started by asking myself important questions about the data to get an idea of what I was looking at. I looked at the averages of males and females and the differences between them. The female average was `r total_female_avg` and the male average was `r total_male_avg`. The difference between them was `r difference_male_female`. I also looked at black and white averages and took there difference. White average was `r total_white_avg` and black average was `r total_black_avg`. There difference was `r difference_black_white`.
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+### Trends over time chart
+```{r trends over time chart, echo=FALSE}
+source("../source/Trends over time.R")
 ```
 
-## Including Plots
+This chart shows each racial group in the data set and I wanted to see the most recent 8 year time period to see how each group compare to each other when it came to jail populations. We can see that white is the lowest, which is highly due to the fact that the minorities have faced high risks of incarceration in the U.S. What really surprised me was the fact that Asian American Pacific Islander was so high by almost 2 thousand more than all of the other races.
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+### Variable Comparison Chart
+```{r variable comparison chart}
+source("../source/Variable comparison.R")
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+This scatter plot chart I made was to show a comparison of men in jail to women in jail using all the data. From the scatter plot, we can see that the population of men in jail is well over the population of women by about a huge 17,000 people. For some points, the women population barely get to 1,000 people as the men get close to 15,000. We can make an assumption that this is cause by toxic masculinity and the idea that a man might get a more harsh charge in some situations than a women would.  
+
+### Map
+```{r map, echo=FALSE}
+source("../source/Map.R")
+```
+
+This map is a map that shows every county and state in the United States and is showing a ratio between black people in jail and a the total population of people in jail. With this map, we start to notice that the map starts to light up the closer we get to the south of the U.S. This could be due to the large amount of racism and oppression that takes place there. 
+
